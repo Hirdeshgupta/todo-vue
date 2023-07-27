@@ -2,10 +2,6 @@
 
 <p id="description">This is simple todo app using vue js </p>
 
-<h2>🚀 Demo</h2>
-
-[https://todo-vue-hkg.netlify.app/](https://todo-vue-hkg.netlify.app/)
-
 <h2>Project Screenshots:</h2>
 
 <img src="https://drive.google.com/uc?id=1SMPsepKB989DddXQRgUxxMJnKbsQaVU4" width="800" height="600/">
