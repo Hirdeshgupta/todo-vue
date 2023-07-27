@@ -7,14 +7,11 @@
       <Button class="btn" v-if="isUpdate" text="Update Task" color="black"/>
       </div>
   </div>
- 
   <AddTask @submit-form="submitForm" :task="task" :date="date" :id="id" />
   <Tasks  @update-task="updateTask" @delete-task="deleteTask" @toggle-reminder="toggleReminder" :tasks="tasks" />
   </div>
 </template>
 <script>
-
-
 import Header from "../components/Header.vue"
 import Button from '../components/Button.vue'
 import Tasks from '../components/Tasks.vue'
@@ -34,10 +31,12 @@ export default ({
           return x.id!==id
         })
       }
+      console.log(id)
     },
     addTask(){
       this.task='';
       this.date='';
+      this.id = undefined;
       this.isUpdate=false;
       this.reminder=false;
     }
@@ -48,8 +47,14 @@ export default ({
     submitForm({id,text,day,reminder}){
       if(this.isUpdate){
         this.tasks  = this.tasks.map((x)=>x.id===id ? {id:id,text:text,day:day} : x);
+        this.isUpdate=false;
+        this.task='';
+        this.date='';
+        this.isUpdate=false;
+        this.reminder=false;
         return
       }
+      this.id = undefined;
       let arr = this.tasks;
       arr.push({id,text,reminder,day});
       this.tasks = arr;
@@ -74,13 +79,13 @@ export default ({
   created(){
     this.tasks=[
       {
-        id:1,
+        id:'9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
         text:'Doctors Appointment',
         day:'March 1st at 2:30 pm',
         reminder:false,
       },
       {
-        id:2,
+        id:'1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed',
         text:' Appointment',
         day:'May 1st at 2:30 pm',
         reminder:false,
@@ -88,8 +93,6 @@ export default ({
     ]
   }
 
-  //watch 
-  //mount 
 })
 </script>
 <style>

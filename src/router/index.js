@@ -1,8 +1,7 @@
 import {createRouter,createWebHistory} from 'vue-router'
 
-import UpdateTask from "../views/UpdateTask.vue"
+import About from "../views/About.vue"
 import Home from "../views/Home.vue"
-import AddTask from "../components/AddTask.vue"
 const routes=[
     {
         path:'/',
@@ -11,9 +10,9 @@ const routes=[
     }
     ,
     {
-        path:'/update/:id',
-        name:'update',
-        component:UpdateTask
+        path:'/about',
+        name:'about',
+        component:About
     }
 ]
 

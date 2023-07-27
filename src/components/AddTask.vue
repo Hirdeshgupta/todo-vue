@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from 'uuid';
 export default({
     name:'AddTask',
     props:['task','date','reminder','id'],
@@ -38,34 +39,27 @@ export default({
                 return
             }
             let newTask= {
-                id:this.id ? this.id : Math.floor(Math.random()*100000),
+                id:this.id ||  uuidv4(),
                 text:this.text,
                 day:this.day,
                 reminder:this.reminder
             }
-            this.$emit('submit-form',newTask)
             this.id=undefined
             this.text='';
             this.day='';
             this.reminder=false;
+            this.$emit('submit-form',newTask)
+      
         }
     },
     watch:{
       task:function(x,y){
         this.text=x;
-        // this.id = x.id
-        // console.log(x.id)
-        // this.text  = x.text;
-        // this.day  = x.day;
-        // this.reminder = x.reminder;
-        // console.log(this.id,this.text,this.day)
-        // this.task = y;
       },
       id:function(x,y){
         this.id=x;
       },
       date:function(x,y){
-        console.log(x)
         this.day=x;
       }
     },
