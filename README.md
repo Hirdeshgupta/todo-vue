@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://drive.google.com/uc?id=1SMPsepKB989DddXQRgUxxMJnKbsQaVU4" width="800" height="400/">
+<img src="https://drive.google.com/uc?id=1SMPsepKB989DddXQRgUxxMJnKbsQaVU4" width="800" height="600/">
 
   
   
